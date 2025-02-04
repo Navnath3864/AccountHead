@@ -44,6 +44,7 @@ public class AccountHeadController {
 	public ResponseEntity<CustomerLoanApplication> getLoanDisbursement(@RequestBody LoanDisbursement loanDisb,
 		@PathVariable int customerLoanId) {
 		LOGGER.info("Received PUT request for CustomerLoanApplication  with customerLoanID: {}", customerLoanId);
+		
 				loanDisb.setLoanNo(customerLoanId);
 				List<CustomerLoanApplication> cla = getAllSactionedData();
 				for(CustomerLoanApplication custLoanApp : cla) {
